@@ -75,6 +75,10 @@ variable "broker" {
     units       = optional(number, 3)
     storage     = optional(map(string), {})
     machines    = optional(set(string), [])
+    endpoint_bindings = optional(set(object({
+      endpoint = optional(string)
+      space    = string
+    })), null)
   })
   default = {}
 }
@@ -92,6 +96,10 @@ variable "controller" {
     units       = optional(number, 3)
     storage     = optional(map(string), {})
     machines    = optional(set(string), [])
+    endpoint_bindings = optional(set(object({
+      endpoint = optional(string)
+      space    = string
+    })), null)
   })
   default = {}
 
@@ -114,6 +122,10 @@ variable "connect" {
     base        = optional(string, "ubuntu@24.04")
     units       = optional(number, 1)
     machines    = optional(set(string), [])
+    endpoint_bindings = optional(set(object({
+      endpoint = optional(string)
+      space    = string
+    })), null)
   })
   default = {}
 }
@@ -130,6 +142,10 @@ variable "karapace" {
     base        = optional(string, "ubuntu@24.04")
     units       = optional(number, 1)
     machines    = optional(set(string), [])
+    endpoint_bindings = optional(set(object({
+      endpoint = optional(string)
+      space    = string
+    })), null)
   })
   default = {}
 }
@@ -146,6 +162,10 @@ variable "ui" {
     base        = optional(string, "ubuntu@24.04")
     units       = optional(number, 1)
     machines    = optional(set(string), [])
+    endpoint_bindings = optional(set(object({
+      endpoint = optional(string)
+      space    = string
+    })), null)
   })
   default = {}
 }
@@ -165,6 +185,10 @@ variable "integrator" {
     base        = optional(string, "ubuntu@24.04")
     units       = optional(number, 1)
     machines    = optional(set(string), [])
+    endpoint_bindings = optional(set(object({
+      endpoint = optional(string)
+      space    = string
+    })), null)
   })
   default = {}
 }

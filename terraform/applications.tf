@@ -13,6 +13,8 @@ resource "juju_application" "integrator" {
   }
 
   config = var.integrator.config
+
+  endpoint_bindings = var.integrator.endpoint_bindings
 }
 
 
